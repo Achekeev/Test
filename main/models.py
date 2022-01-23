@@ -1,6 +1,6 @@
 from django.db import models
 
-DEFAULT_AUTHOR_NAME = 'anonymous'
+DEFAULT_AUTHOR_NAME = "anonymous"
 
 
 class Post(models.Model):
@@ -13,7 +13,9 @@ class Post(models.Model):
 
     title = models.CharField(max_length=255)
     author_name = models.CharField(max_length=255, default=DEFAULT_AUTHOR_NAME)
-    link = models.URLField(verbose_name="Link to post", max_length=200)
+    link = models.URLField(
+        verbose_name="Link to post", max_length=200, blank=True, null=True
+    )
     creation_date = models.DateField(auto_now=True)
     amount_of_upvotes = models.IntegerField(default=0)
 
@@ -30,8 +32,7 @@ class Comment(models.Model):
         verbose_name = "Comment"
         verbose_name_plural = "Comments"
 
-    post = models.ForeignKey(Post, related_name="comment",
-                             on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name="comment", on_delete=models.CASCADE)
     author_name = models.CharField(max_length=255)
     content = models.TextField()
     creation_date = models.DateTimeField(auto_now=True)

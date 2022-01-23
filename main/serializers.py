@@ -24,12 +24,7 @@ class PostSerializer(serializers.ModelSerializer):
             "amount_of_upvotes",
             "comments",
         )
-        read_only_fields = (
-            "link",
-            "creation_date",
-            "amount_of_upvotes",
-            "comments"
-        )
+        read_only_fields = ("link", "creation_date", "amount_of_upvotes", "comments")
 
 
 class UpvoteSerializer(serializers.ModelSerializer):
