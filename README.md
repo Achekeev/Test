@@ -1,7 +1,7 @@
 <h1>Develops Test Task</h1>
 
 Postman link https://www.getpostman.com/collections/7336c2bb2ed1e8a7e126
-
+Deployed project link: http://52.210.92.157/
 Code formatted with black
 
 To run on local machine:
